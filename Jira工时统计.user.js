@@ -84,7 +84,7 @@
     $("[title='排序 公共工时']").get(0).innerHTML="公共工时<br/>("+count+")";
     console.log("公共工时"+count);
     sum+=count;
-    $(".results-count-text").append("<span class='results-count-start'>&nbsp;&nbsp汇总工时"+sum+"&nbsp&nbsp</span>");
+    $(".results-count-text").append("<span class='results-count-start'>&nbsp;&nbsp汇总工时 "+sum+"&nbsp&nbsp</span>");
     console.log("工时 汇总"+sum);
     // Your code here...
 })();
