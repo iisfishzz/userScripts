@@ -5,7 +5,6 @@
 // @description  try to take over the world!
 // @author       You
 // @match        http://migujira.cmread.com/issues/?filter=*
-// @require      https://code.jquery.com/jquery-latest.js
 // @grant        none
 // ==/UserScript==
 
