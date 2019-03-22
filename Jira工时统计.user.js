@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Jira工时统计
 // @namespace    http://tampermonkey.net/
-// @version      0.1.6
+// @version      0.2.0
 // @description  try to take over the world!
 // @author       You
 // @match        http://migujira.cmread.com/issues/?*
@@ -178,6 +178,8 @@
        //耗费时间 - 2 周, 2 天, 11 分   剩余的估算 - 2 天, 7 小时, 59 分
          for (i = 0; i < pgs.size(); i++) {
             var pgtitle = pgs.get(i).title;
+            //增加容错
+            pgtitle = pgtitle.replace("尚未指定","");
               //console.log("1----"+i+"===="+pgtitle);
              if(pgtitle.indexOf("初始预估")>=0){
                  var gsstr = pgtitle.replace("初始预估 - ","")
@@ -214,7 +216,7 @@
          }
         var progress = Math.round(costValue/initialValue*100,2)+"%";
         console.log("初始预估 "+initialValue+"剩余的估算 "+surplusValue+"耗费时间 "+costValue);
-        $(".results-count-text").append("<br/>总体时间进度"+Math.round(costValue/initialValue*100,2)+"%"
+        $(".results-count-text").append("<br/>本页：总体时间进度"+Math.round(costValue/initialValue*100,2)+"%"
                                        +"<br/>初始预估 "+Math.round(initialValue/60/8,2)+"天,剩余的估算"+Math.round(surplusValue/60/8,2)+"天,耗费时间"+Math.round(costValue/60/8,2)+"天,");
     }
 
